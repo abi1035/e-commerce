@@ -16,6 +16,9 @@ export type Props = {
   type?: 'submit' | 'button'
   disabled?: boolean
   invert?: boolean
+  // 1) We are doing this in case if we want to pass some additional icons/labels/arrows to style our button
+  // The question mark is to signify it means optional
+  children?:React.ReactNode
 }
 
 export const Button: React.FC<Props> = ({
@@ -29,6 +32,8 @@ export const Button: React.FC<Props> = ({
   type = 'button',
   disabled,
   invert,
+  // 2
+  children
 }) => {
   let el = elFromProps
 
@@ -46,6 +51,8 @@ export const Button: React.FC<Props> = ({
   const content = (
     <div className={classes.content}>
       <span className={classes.label}>{label}</span>
+      {/* 3 */}
+      {children}
     </div>
   )
 
