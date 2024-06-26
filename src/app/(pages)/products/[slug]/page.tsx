@@ -57,7 +57,7 @@ export default async function Product({ params: { slug } }) {
                 ],
               },
             ],
-            docs: relatedProducts,
+            docs:relatedProducts,
           },
         ]}
       />
